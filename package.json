@@ -1,0 +1,25 @@
+{
+  "name": "drupal-breakpoints",
+  "version": "0.0.3",
+  "description": "Go here",
+  "main": "eyeglass-exports.js",
+  "eyeglass": {
+    "needs": "^0.6.2"
+  },
+  "author": {
+    "name": "Name",
+    "url": "heyo"
+  },
+  "keywords": [
+    "sass",
+    "eyeglass-module"
+  ],
+  "dependencies": {
+    "eyeglass": "^0.6.2",
+    "js-yaml": "latest",
+    "glob": "^5.0.15"
+  },
+  "devDependencies": {
+    "drupal-breakpoints": "file:drupal-breakpoints-0.0.3.tgz"
+  }
+}
