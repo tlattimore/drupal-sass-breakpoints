@@ -1,0 +1,6 @@
+@mixin media($label) {
+  @media #{dsb($label)} {
+    @content;
+  }
+}
+
