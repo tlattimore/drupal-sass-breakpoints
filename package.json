@@ -1,7 +1,7 @@
 {
   "name": "drupal-sass-breakpoints",
-  "version": "1.0.0",
-  "description": "Share Breakpoints with a Drupal themes breakpoints.yml file and your Sass styles.",
+  "version": "1.0.1",
+  "description": "Share Breakpoints with a Drupal theme's breakpoints.yml file and Sass.",
   "main": "eyeglass-exports.js",
   "eyeglass": {
     "needs": "^0.7.1"
