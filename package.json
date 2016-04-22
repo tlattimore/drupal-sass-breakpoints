@@ -4,7 +4,7 @@
   "description": "Share Breakpoints with a Drupal theme's breakpoints.yml file and Sass.",
   "main": "eyeglass-exports.js",
   "eyeglass": {
-    "needs": "^0.7.1"
+    "needs": ">=0.7.1"
   },
   "author": {
     "name": "Thomas Lattimore",
@@ -15,7 +15,7 @@
     "eyeglass-module"
   ],
   "dependencies": {
-    "eyeglass": "^0.7.1",
+    "eyeglass": ">=0.7.1",
     "js-yaml": "latest",
     "glob": "^5.0.15"
   }
