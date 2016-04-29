@@ -1,13 +1,11 @@
 "use strict";
 
-var theme_path = process.env.PWD;
 var path = require('path');
 var fs   = require('fs');
 var glob = require('glob');
 var yaml = require('js-yaml');
-var dir = fs.readdirSync(theme_path);
-var breakpointsFile = glob.sync('*.breakpoints.yml', {'cwd': theme_path});
-var breakpoints = yaml.safeLoad(fs.readFileSync(breakpointsFile[0], 'utf8'));
+var breakpointsFile;
+var breakpoints = [];
 
 /**
  * Custom Function to get the value of a media query
@@ -48,11 +46,21 @@ var getMediaQuery = function(targetLabel, targetGroup) {
 }
 
 module.exports = function(eyeglass, sass) {
+  var dsbOptions = eyeglass.options.drupalSassBreakpoints || process.env.PWD;
+  var themePath = dsbOptions.themePath || process.env.PWD;
+  breakpointsFile = glob.sync('*.breakpoints.yml', {'cwd': themePath});
+
+  if (breakpointsFile.length) {
+    breakpoints = yaml.safeLoad(fs.readFileSync(themePath + breakpointsFile[0], 'utf8'));
+  }
+  else {
+    console.log('No breakoints file found. You may need to add \ndrupalSassBreakpoints: {\n\tthemePath: \'/path/to/theme\'\n}\nto your the SASS options passed to Eyeglass.');
+  }
+
   return {
     sassDir: path.join(__dirname, 'sass'),
     functions: {
       "dsb($label, $group: '')": function(label, group, done) {
-
         var label = label.getValue();
         var group = group.getValue();
 
