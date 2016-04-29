@@ -54,7 +54,7 @@ module.exports = function(eyeglass, sass) {
     breakpoints = yaml.safeLoad(fs.readFileSync(themePath + breakpointsFile[0], 'utf8'));
   }
   else {
-    console.log('No breakoints file found. You may need to add \ndrupalSassBreakpoints: {\n\tthemePath: \'/path/to/theme\'\n}\nto your the SASS options passed to Eyeglass.');
+    console.log('No breakpoints file found. You may need to add \ndrupalSassBreakpoints: {\n\tthemePath: \'/path/to/theme\'\n}\nto your the SASS options passed to Eyeglass.');
   }
 
   return {
